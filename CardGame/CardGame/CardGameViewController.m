@@ -14,16 +14,19 @@
 
 @implementation CardGameViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+- (IBAction)touchCardButoon:(UIButton *)sender {
+    if([sender.currentTitle length]){
+       [sender setBackgroundImage:[UIImage imageNamed:@"CardBack"]
+                         forState:UIControlStateNormal];
+        [sender setTitle:@"" forState:UIControlStateNormal];
+    }else{
+        [sender setBackgroundImage:[UIImage imageNamed:@"CardFront"]
+                          forState:UIControlStateNormal];
+        [sender setTitle:@"aa" forState:UIControlStateNormal];
+    }
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
